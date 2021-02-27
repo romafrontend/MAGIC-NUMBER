@@ -1,0 +1,14 @@
+.details_container {
+    display: flex;
+    flex-grow: 1;
+    padding: 4px;
+}
+  
+.details_container > div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: lightgray;
+}
