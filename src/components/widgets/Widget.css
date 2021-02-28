@@ -1,0 +1,6 @@
+.widget_container {
+    height: 40px;
+    width: 100%;
+    background-color: green;
+    border: solid 1px black;
+}

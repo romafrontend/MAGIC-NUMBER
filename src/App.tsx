@@ -5,47 +5,43 @@ import './App.css';
 import WidgetsContainer from './components/widgets/WidgetsContainer';
 import DetailsContainer from './components/details/DetailsContainer';
 // types
-export type WidgetType = {
-  id: number;
-  name: string;
-  magicNumber: string;
-  keyValuePairs: KeyValuePair[];
-}
+import {WidgetType} from './shared/types/widget';
 
-export type NewWidgetType = {
-  name: string;
-  magicNumber: string;
-  keyValuePairs: KeyValuePair[];
-}
+// services
+import {fetchWidgets} from './shared/services/api-service';
 
-export type KeyValuePair = {
-  key: number;
-  value: string;
-}
 
 const App = () => {
   const [widgets, setWidgets] = useState<WidgetType[]>([]);
 
   useEffect(() => {
-    const tempWidgets = [
-      {
-        id: 111,
-        name: 'Stam',
-        magicNumber: 'One hundred twenty three',
-        keyValuePairs: [
-          {key: 1, value: 'One hundred'},
-          {key: 2, value: 'twenty'},
-          {key: 3, value: 'three'}
-        ]   
-      }
-    ];
+    const getWidgets = async () => {
+      const widgets = await fetchWidgets();
+      setWidgets(widgets);
+    }
 
-    setWidgets(tempWidgets);
-  });
+    getWidgets();
+  }, []);
+
+  const addWidget = async (id: number) => {
+    console.log(id);
+  }
+
+  const editWidget = async (id: number) => {
+
+  }
+
+  const deleteWidget = async (id: number) => {
+
+  }
 
   return (
     <div className="main_container">
-      <WidgetsContainer />
+      <WidgetsContainer 
+          widgets={widgets} 
+          onAdd={addWidget} 
+          onEdit={editWidget} 
+          onDelete={deleteWidget} />
       <DetailsContainer /> 
     </div>
   );
