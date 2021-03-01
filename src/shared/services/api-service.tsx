@@ -1,20 +1,15 @@
 import {WidgetType} from '../types/widget';
 
-export const fetchWidgets = (): Promise<WidgetType[]> => {
-    return new Promise((resolve, reject) => {
-        const tempWidgets = [
-            {
-              id: 111,
-              name: 'Stam',
-              magicNumber: 'One hundred twenty three',
-              keyValuePairs: [
-                {key: 1, value: 'One hundred'},
-                {key: 2, value: 'twenty'},
-                {key: 3, value: 'three'}
-              ]   
-            }
-          ];
+const dbUrl = 'http://localhost:5000/widgets';
 
-          resolve(tempWidgets);
-    });
+export const fetchWidgets = async () => {
+  const res = await fetch(dbUrl);
+  const data = await res.json();
+  return data;
+}
+
+export const deleteWidgetById = async (id: number) => {
+  await fetch(dbUrl + `/${id}`, {
+    method: 'DELETE'
+  });
 }

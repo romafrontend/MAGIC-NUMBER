@@ -1,0 +1,42 @@
+{
+  "widgets": [
+    {
+      "id": 1,
+      "name": "Stam",
+      "magicNumber": "One hundred twenty three",
+      "keyValuePairs": [
+        {
+          "key": 1,
+          "value": "One hundred"
+        },
+        {
+          "key": 2,
+          "value": "twenty"
+        },
+        {
+          "key": 3,
+          "value": "three"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Sam",
+      "magicNumber": "Two hundred twenty two",
+      "keyValuePairs": [
+        {
+          "key": 2,
+          "value": "Two hundred"
+        },
+        {
+          "key": 2,
+          "value": "twenty"
+        },
+        {
+          "key": 2,
+          "value": "two"
+        }
+      ]
+    }
+  ]
+}

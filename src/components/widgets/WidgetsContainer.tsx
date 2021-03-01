@@ -7,13 +7,13 @@ import {WidgetType} from '../../shared/types/widget';
 
 type Props = {
     widgets: WidgetType[];
-    onAdd: (id: number) => void;
+    selectedId: number;
+    onDetails: (id: number) => void;
     onEdit: (id: number) => void;
     onDelete: (id: number) => void;
 }
 
-const WidgetsContainer: React.FC<Props> = ({widgets, onAdd, onEdit, onDelete}) => {
- 
+const WidgetsContainer: React.FC<Props> = ({widgets, selectedId, onDetails, onEdit, onDelete}) => {
     return (
         <div className="widgets_wrapper">
           <div>
@@ -22,8 +22,9 @@ const WidgetsContainer: React.FC<Props> = ({widgets, onAdd, onEdit, onDelete}) =
                     widgets.map((widget) => (
                         <Widget 
                             key={widget.id}
+                            selectedId={selectedId}
                             widget={widget} 
-                            onAdd={onAdd} 
+                            onDetails={onDetails} 
                             onEdit={onEdit} 
                             onDelete={onDelete} />
                             ))

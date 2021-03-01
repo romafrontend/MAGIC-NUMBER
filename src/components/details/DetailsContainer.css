@@ -1,9 +1,10 @@
 .details_container {
     display: flex;
-    flex-grow: 1;
+    flex-direction: row;
+    width: 50%;
     padding: 4px;
 }
-  
+
 .details_container > div {
     display: flex;
     flex-direction: column;
@@ -11,4 +12,28 @@
     border: 1px solid gray;
     border-radius: 5px;
     background-color: lightgray;
+}
+  
+.details_title {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+}
+
+.details_title > div {
+    margin: auto;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.magic_number {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+}
+
+.magic_number > div {
+    margin: auto;
+    font-size: 20px;
+    font-weight: 600;
 }
