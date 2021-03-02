@@ -13,7 +13,7 @@ import {fetchWidgets, deleteWidgetById} from './shared/services/api-service';
 const App = () => {
   const [widgets, setWidgets] = useState<WidgetType[]>([]);
   const [selectedWidget, setSelectedWidget] = useState<WidgetType>();
-  const [widgetToEdit, setWidgetToEdit] = useState<WidgetType>();
+  const [widgetToEdit, setWidgetToEdit] = useState<WidgetType | undefined>();
   const [switchEditPopup, setSwitchEditPopup] = useState<boolean>(false);
 
   useEffect(() => {
@@ -47,6 +47,10 @@ const App = () => {
     setSwitchEditPopup(false);
   }
 
+  const submitEditPopup = (_widget: WidgetType) => {
+    console.log(_widget);
+  }
+
   return (
     <div className="main_container">
       <WidgetsContainer 
@@ -59,8 +63,8 @@ const App = () => {
         <DetailsContainer selectedWidget={selectedWidget} /> 
       ) : ('Widget not selected')}
 
-      {widgetToEdit ? (
-        <EditPopup widget={widgetToEdit} open={switchEditPopup} onClose={closeEditPopup} onSave={closeEditPopup} />
+      {switchEditPopup ? (
+        <EditPopup widget={widgetToEdit} open={switchEditPopup} onClose={closeEditPopup} onSave={submitEditPopup} />
       ) : ('')}
     </div>
   );

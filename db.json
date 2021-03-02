@@ -3,7 +3,8 @@
     {
       "id": 1,
       "name": "Stam",
-      "magicNumber": "One hundred twenty three",
+      "magicNumber": 123,
+      "magicNumberStr": "One hundred twenty three",
       "keyValuePairs": [
         {
           "key": 1,
@@ -22,7 +23,8 @@
     {
       "id": 2,
       "name": "Sam",
-      "magicNumber": "Two hundred twenty two",
+      "magicNumber": 222,
+      "magicNumberStr": "Two hundred twenty two",
       "keyValuePairs": [
         {
           "key": 2,
@@ -35,6 +37,22 @@
         {
           "key": 2,
           "value": "two"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Den",
+      "magicNumber": 55,
+      "magicNumberStr": "Fifty",
+      "keyValuePairs": [
+        {
+          "key": 2,
+          "value": "Fifty"
+        },
+        {
+          "key": 2,
+          "value": "five"
         }
       ]
     }
