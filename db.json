@@ -1,10 +1,9 @@
 {
   "widgets": [
     {
-      "id": 1,
       "name": "Stam",
       "magicNumber": 123,
-      "magicNumberStr": "One hundred twenty three",
+      "magicNumberStr": "One hundred twenty three ",
       "keyValuePairs": [
         {
           "key": 1,
@@ -18,7 +17,8 @@
           "key": 3,
           "value": "three"
         }
-      ]
+      ],
+      "id": 1
     },
     {
       "id": 2,
@@ -43,18 +43,66 @@
     {
       "id": 3,
       "name": "Den",
-      "magicNumber": 55,
-      "magicNumberStr": "Fifty",
+      "magicNumber": 551,
+      "magicNumberStr": "qq aa xc ",
       "keyValuePairs": [
         {
-          "key": 2,
-          "value": "Fifty"
+          "key": "5",
+          "value": "qq"
         },
         {
-          "key": 2,
-          "value": "five"
+          "key": "5",
+          "value": "aa"
+        },
+        {
+          "key": "1",
+          "value": "xc"
         }
       ]
+    },
+    {
+      "name": "444t",
+      "magicNumber": 56,
+      "magicNumberStr": "ttt j ",
+      "keyValuePairs": [
+        {
+          "key": "5",
+          "value": "ttt"
+        },
+        {
+          "key": "6",
+          "value": "j"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "Denccccccc",
+      "magicNumber": 0,
+      "magicNumberStr": "",
+      "keyValuePairs": [
+        {
+          "key": 0,
+          "value": ""
+        },
+        {
+          "key": 0,
+          "value": ""
+        },
+        {
+          "key": 0,
+          "value": ""
+        },
+        {
+          "key": 0,
+          "value": ""
+        },
+        {
+          "key": 0,
+          "value": ""
+        }
+      ],
+      "id": 5
     }
   ]
 }

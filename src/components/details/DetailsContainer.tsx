@@ -14,7 +14,7 @@ const DetailsContainer: React.FC<Props> = ({selectedWidget}) => {
             <div>{selectedWidget.name}</div>
           </div>
           <div className="magic_number">
-            <div>{selectedWidget.magicNumber}</div>
+            <div>{selectedWidget.magicNumberStr}</div>
           </div>
         </div>
       </div>

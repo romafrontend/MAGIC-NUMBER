@@ -13,27 +13,29 @@ type Props = {
     onDelete: (id: number) => void;
 }
 
-const Widget: React.FC<Props> = ({widget, selectedId, onDetails, onEdit, onDelete}) => {
+const WidgetItem: React.FC<Props> = ({widget, selectedId, onDetails, onEdit, onDelete}) => {
+   const {id = 0, name} = widget || {};
+
     return (
-        <div className={`widget_container ${selectedId === widget.id ? "selected_widget" : ""}`}>
+        <div className={`widget_container ${selectedId ===id ? "selected_widget" : ""}`}>
             <div className="widget_title">
-                <div>{widget.name}</div>
+                <div>{name}</div>
             </div>
             <div className="widget_toolbar">
               <div>
                 <div className="toolbar_button" 
                   title="Show details"
-                  onClick={() => onDetails(widget.id)}>
+                  onClick={() => id && onDetails(id)}>
                     <BiDetail />
                 </div>
                 <div className="toolbar_button"
                   title="Edit widget"
-                  onClick={() => onEdit(widget.id)}>
+                  onClick={() => id && onEdit(id)}>
                     <FaRegEdit />
                 </div>
                 <div className="toolbar_button"
                   title="Delete widget"
-                  onClick={() => onDelete(widget.id)}>
+                  onClick={() => id && onDelete(id)}>
                     <RiDeleteBin2Line />
                 </div>
               </div>
@@ -42,4 +44,4 @@ const Widget: React.FC<Props> = ({widget, selectedId, onDetails, onEdit, onDelet
     )
 }
 
-export default Widget
+export default WidgetItem

@@ -27,11 +27,20 @@
     padding: 4px;
 }
 
-.widgets_toolbar > div {
+.add_button {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
     border: 1px solid gray;
     border-radius: 5px;
     background-color: #ffffff;
+    cursor: pointer;
+}
+
+.add_button > div {
+    text-align: center;
+    width: 100%;
+    line-height: 36px;
+    font-size: 26px;
+    font-weight: bold;
 }

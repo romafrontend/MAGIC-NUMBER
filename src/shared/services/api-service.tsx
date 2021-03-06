@@ -8,7 +8,29 @@ export const fetchWidgets = async () => {
   return data;
 }
 
-export const deleteWidgetById = async (id: number) => {
+export const saveWidget = async (widgetToUpdate: WidgetType) => {
+  const res = await fetch(dbUrl, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(widgetToUpdate)
+  });
+  return res.json();
+}
+
+export const editWidget = async (widgetToUpdate: WidgetType) => {
+  const res = await fetch(dbUrl + `/${widgetToUpdate.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(widgetToUpdate)
+  });
+  return res.json();
+}
+
+export const deleteWidget = async (id: number) => {
   await fetch(dbUrl + `/${id}`, {
     method: 'DELETE'
   });

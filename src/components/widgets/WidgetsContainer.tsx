@@ -1,7 +1,7 @@
 // styles
 import './WidgetsContainer.css'
 // components
-import Widget from './Widget';
+import WidgetItem from './WidgetItem';
 // types
 import {WidgetType} from '../../shared/types/widget';
 
@@ -11,16 +11,17 @@ type Props = {
     onDetails: (id: number) => void;
     onEdit: (id: number) => void;
     onDelete: (id: number) => void;
+    onCreate: () => void;
 }
 
-const WidgetsContainer: React.FC<Props> = ({widgets, selectedId, onDetails, onEdit, onDelete}) => {
+const WidgetsContainer: React.FC<Props> = ({widgets, selectedId, onDetails, onEdit, onDelete, onCreate}) => {
     return (
         <div className="widgets_wrapper">
           <div>
             <div className="widgets_container">
                 {widgets.length > 0 ? (
                     widgets.map((widget) => (
-                        <Widget 
+                        <WidgetItem 
                             key={widget.id}
                             selectedId={selectedId}
                             widget={widget} 
@@ -33,8 +34,8 @@ const WidgetsContainer: React.FC<Props> = ({widgets, selectedId, onDetails, onEd
                 )} 
             </div>
             <div className="widgets_toolbar">
-              <div>
-                  <div>Add</div>
+              <div className="add_button" onClick={onCreate}>
+                  <div>Add Widget</div>
               </div>
             </div>
           </div>

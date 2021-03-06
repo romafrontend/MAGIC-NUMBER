@@ -1,16 +1,9 @@
 export type WidgetType = {
-    id: number;
     name: string;
     magicNumber: number;
     magicNumberStr: string;
     keyValuePairs: KeyValuePair[];
-  }
-  
-  export type NewWidgetType = {
-    name: string;
-    magicNumber: number;
-    magicNumberStr: string;
-    keyValuePairs: KeyValuePair[];
+    id?: number;
   }
 
   export type KeyValuePair = {
