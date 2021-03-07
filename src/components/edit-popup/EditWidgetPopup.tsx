@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 // material-ui
 import {Dialog, DialogTitle, DialogContent, DialogActions, Button} from '@material-ui/core';
 // Styles 
-import './EditPopup.css';
+import './EditWidgetPopup.css';
 // Types
 import {WidgetType, KeyValuePair} from '../../shared/types/widget';
 type Props = {
@@ -66,9 +66,9 @@ const EditWidgetPopup: React.FC<Props> = ({widgetToEdit, onClose, onSubmit}) => 
     } 
 
     const onSubmitForm = () => {
-        if(widgetName !== '' && magicNumber > 0) {
+        if(widgetName !== '' && widgetMagicNumber > 0) {
             let magicNumberStr = '';
-            keyValuePairs.map(pair => {
+            widgetKeyValuePairs.map(pair => {
                 magicNumberStr += pair.value + ' ';
             });
             const widgetId = id ? id : 0;

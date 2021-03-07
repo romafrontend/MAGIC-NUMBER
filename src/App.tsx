@@ -4,7 +4,6 @@ import './App.css';
 // Components 
 import WidgetsContainer from './components/widgets/WidgetsContainer';
 import DetailsContainer from './components/details/DetailsContainer';
-import EditPopup from './components/details/DetailsContainer';
 import EditWidgetPopup from './components/edit-popup/EditWidgetPopup';
 // types
 import {WidgetType} from './shared/types/widget';
@@ -36,6 +35,11 @@ const App = () => {
   const onDeleteWidget = async (id: number) => {
     await deleteWidget(id);
     setWidgets(widgets.filter((widget) => widget.id !== id));
+    if(widgets.length > 1 && widgets[id]) {
+      setSelectedWidget(widgets[id]);
+    } else {
+      setSelectedWidget(widgets[0]);
+    }
   }
 
   const onEditWidget = async (id: number) => {
@@ -60,29 +64,28 @@ const App = () => {
   }
 
   const submitEditPopup = async (_widgetToUpdate: WidgetType) => {
-    console.log(_widgetToUpdate)
     closeEditPopup();
     if(_widgetToUpdate.id) {
       const data = await editWidget(_widgetToUpdate);
       setWidgets(widgets.map(_widget => _widget.id === _widgetToUpdate.id ? data: _widget));
+      setSelectedWidget(data);
     } else {
       const data = await saveWidget(_widgetToUpdate);
       setWidgets([...widgets, data]);
+      setSelectedWidget(data);
     }
   }
 
   return (
     <div className="main_container">
-      {selectedWidget && selectedWidget.id ? (
             <WidgetsContainer 
             widgets={widgets} 
-            selectedId={selectedWidget.id}
+            selectedId={selectedWidget && selectedWidget.id ? selectedWidget.id : 0}
             onDetails={showDetails} 
             onEdit={onEditWidget} 
             onDelete={onDeleteWidget} 
             onCreate={onCreateWidget} />
-      ) : ('')}
-      {selectedWidget ? (
+      {widgets.length > 0 && selectedWidget ? (
         <DetailsContainer selectedWidget={selectedWidget} /> 
       ) : ('Widget not selected')}
 
@@ -92,5 +95,5 @@ const App = () => {
     </div>
   );
 }
-{/* <EditPopup widgetToEdit={widgetToEdit} isOpenPopup={switchEditPopup} onClose={closeEditPopup} onSubmit={submitEditPopup} /> */}
+
 export default App;

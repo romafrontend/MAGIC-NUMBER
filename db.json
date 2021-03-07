@@ -1,108 +1,60 @@
 {
   "widgets": [
     {
-      "name": "Stam",
-      "magicNumber": 123,
-      "magicNumberStr": "One hundred twenty three ",
+      "name": "First widget",
+      "magicNumber": 57,
+      "magicNumberStr": "Fifty seven ",
       "keyValuePairs": [
         {
-          "key": 1,
-          "value": "One hundred"
+          "key": "5",
+          "value": "Fifty"
         },
         {
-          "key": 2,
-          "value": "twenty"
-        },
-        {
-          "key": 3,
-          "value": "three"
+          "key": "7",
+          "value": "seven"
         }
       ],
       "id": 1
     },
     {
-      "id": 2,
-      "name": "Sam",
-      "magicNumber": 222,
-      "magicNumberStr": "Two hundred twenty two",
+      "name": "r",
+      "magicNumber": 5,
+      "magicNumberStr": "g ",
       "keyValuePairs": [
         {
-          "key": 2,
-          "value": "Two hundred"
-        },
-        {
-          "key": 2,
-          "value": "twenty"
-        },
-        {
-          "key": 2,
-          "value": "two"
+          "key": "5",
+          "value": "g"
         }
-      ]
+      ],
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Den",
-      "magicNumber": 551,
-      "magicNumberStr": "qq aa xc ",
+      "name": "666777",
+      "magicNumber": 75,
+      "magicNumberStr": " g ",
       "keyValuePairs": [
         {
-          "key": "5",
-          "value": "qq"
+          "key": "7",
+          "value": ""
         },
         {
           "key": "5",
-          "value": "aa"
-        },
-        {
-          "key": "1",
-          "value": "xc"
+          "value": "g"
         }
-      ]
+      ],
+      "id": 3
     },
     {
-      "name": "444t",
-      "magicNumber": 56,
-      "magicNumberStr": "ttt j ",
+      "name": "5",
+      "magicNumber": 5,
+      "magicNumberStr": "b ",
       "keyValuePairs": [
         {
           "key": "5",
-          "value": "ttt"
-        },
-        {
-          "key": "6",
-          "value": "j"
+          "value": "b"
         }
       ],
       "id": 4
-    },
-    {
-      "name": "Denccccccc",
-      "magicNumber": 0,
-      "magicNumberStr": "",
-      "keyValuePairs": [
-        {
-          "key": 0,
-          "value": ""
-        },
-        {
-          "key": 0,
-          "value": ""
-        },
-        {
-          "key": 0,
-          "value": ""
-        },
-        {
-          "key": 0,
-          "value": ""
-        },
-        {
-          "key": 0,
-          "value": ""
-        }
-      ],
-      "id": 5
     }
   ]
 }

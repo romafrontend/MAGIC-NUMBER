@@ -16,7 +16,7 @@ export const saveWidget = async (widgetToUpdate: WidgetType) => {
     },
     body: JSON.stringify(widgetToUpdate)
   });
-  return res.json();
+  return await res.json();
 }
 
 export const editWidget = async (widgetToUpdate: WidgetType) => {
@@ -27,7 +27,7 @@ export const editWidget = async (widgetToUpdate: WidgetType) => {
     },
     body: JSON.stringify(widgetToUpdate)
   });
-  return res.json();
+  return await res.json();
 }
 
 export const deleteWidget = async (id: number) => {
